@@ -2,7 +2,7 @@ const userService = require("../services/user.service");
 
 
 function auth(req,res,next) {
-    const imcrToken = req.cookies['imcr-token'];
+    const imcrToken = req.cookies['imcr-token'] || req.query.token;
 
     if(imcrToken && userService.checkToken(imcrToken)) {
         next();
