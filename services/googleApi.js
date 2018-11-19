@@ -1,6 +1,6 @@
 const fs = require('fs');
 const readline = require('readline');
-const {google} = require('googleapis');
+const { google } = require('googleapis');
 const config = require("../config");
 
 // If modifying these scopes, delete token.json.
@@ -21,9 +21,9 @@ fs.readFile('./config/credentials.json', (err, content) => {
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials) {
-  const {client_secret, client_id, redirect_uris} = credentials.installed;
+  const { client_secret, client_id, redirect_uris } = credentials.installed;
   oAuth2Client = new google.auth.OAuth2(
-      client_id, client_secret, redirect_uris[0]);
+    client_id, client_secret, redirect_uris[0]);
 
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
@@ -62,12 +62,12 @@ function getNewToken(oAuth2Client) {
   });
 }
 
-function temp(){
+function temp() {
   sheets.spreadsheets.values.get({
     spreadsheetId: '1pq8pD3HsfNrWViyjMIpmBY5E4kvJbh1jSnBVnCDaDr8',
-    
+
     range: 'Sheet1!A1:J1',
-    
+
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
@@ -89,32 +89,33 @@ function temp(){
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 function appendRecord(record) {
-    const sheets = google.sheets({version: 'v4', auth:oAuth2Client});
+  const sheets = google.sheets({ version: 'v4', auth: oAuth2Client });
 
+  
 
   let values = [
-   record
+    record
   ];
   let resource = {
     values,
   };
   sheets.spreadsheets.values.append({
-    spreadsheetId:config.sheetId,
-    range:'Sheet1!A1:K1',
-    valueInputOption:'USER_ENTERED',
+    spreadsheetId: config.sheetId,
+    range: 'raw!A1:ZZ1',
+    valueInputOption: 'USER_ENTERED',
     resource,
-    insertDataOption:'INSERT_ROWS'
+    insertDataOption: 'INSERT_ROWS'
   }, (err, result) => {
     if (err) {
       // Handle error.
       console.log(err);
     } else {
 
-        console.log(`${result.data.updates.updatedCells} cells appended.`);
+      console.log(`${result.data.updates.updatedCells} cells appended.`);
     }
   });
-  
-  
+
+
 }
 
-module.exports={appendRecord};
+module.exports = { appendRecord };

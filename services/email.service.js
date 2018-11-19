@@ -8,14 +8,18 @@ var trasporter = nodemailer.createTransport({
     }
 });
 
-const mailOptions = {
-    from: 'imcr.notify@gmail.com',
-    to: ['valeriamadaev@gmail.com', 'haberdan@gmail.com '],
-    subject: 'IMCR new record',
-    html: '<p> Imcr record</p>'
-};
 
-function sendMail() {
+function sendMail(values) {
+
+    const mailOptions = {
+        from: 'imcr.notify@gmail.com',
+        to: ['valeriamadaev@gmail.com', 'haberdan@gmail.com '],
+        subject: 'IMCR new record',
+        html: '<p> Imcr record</p>'
+    };
+
+    mailOptions.html += `<p>${values}</p>`;
+    
     trasporter.sendMail(mailOptions, function (err, info) {
         if (err)
             console.error(err)

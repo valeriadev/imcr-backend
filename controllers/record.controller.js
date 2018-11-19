@@ -1,14 +1,13 @@
 const googleApiAppend = require('../services/googleApi');
 const mail= require('../services/email.service');
+const filter = require("../services/emptyValues");
 
 function record(req, res){
-   
-    console.log(JSON.stringify(req.body));
-    console.log(req.body.quantity);
-    googleApiAppend.appendRecord(Object.values(req.body));
-    mail.sendMail();
-    res.sendStatus(200);   
+    const filteredArray = filter.removeEmptyValues(Object.values(req.body));
+    googleApiAppend.appendRecord(filteredArray);
 
+    mail.sendMail(filteredArray);
+    res.sendStatus(200);   
 }
 
 module.exports = {record};
