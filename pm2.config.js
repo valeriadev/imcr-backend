@@ -1,7 +1,7 @@
 {
     apps: [{
         name: "IMCR-backend",
-        script: "./app.js",
+        script: ".",
         env: {
             "NODE_ENV": "production",
         }
