@@ -30,7 +30,7 @@ app.use(cookieParser())
 
 
 
-app.listen(80, (err) => {
+app.listen(8080, (err) => {
     if (err) {
         console.error("server can't listen to port 8080", err);
         throw err;
