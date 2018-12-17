@@ -3,4 +3,78 @@
   "password": "Aa123456",
   "token": "77329233-ae12-46b8-9d26-850b55956af3",
   "type": "admin"
-}]
+},
+{
+  "username": "Kaplan",
+  "password": "Kaplan",
+  "token": "eaedf404-fcc4-4283-add2-19ec8cfb7006",
+  "type": "hospitalUser"
+},
+{
+  "username": "Hadassah",
+  "password": "Hadassah",
+  "token": "f118292d-486c-4bd9-aef0-d9c2f7558149",
+  "type": "hospitalUser"
+},
+{
+  "username": "Shaare",
+  "password": "Shaare",
+  "token": "2ff479ca-519c-4bb0-97a7-464ce704e421",
+  "type": "hospitalUser"
+  
+},
+{
+  "username": "Ichilov",
+  "password": "Ichilov",
+  "token": "7c83847b-e4c3-4abc-9f2d-5d4d816891f3",
+  "type": "hospitalUser"
+},
+{
+  "username": "Belinson",
+  "password": "Belinson",
+  "token": "6e5837a3-0995-4530-bc15-17eeeed68a9a",
+  "type": "hospitalUser"
+},
+{
+  "username": "Rambam",
+  "password": "Rambam",
+  "token": "fd16a484-4215-4dac-bfab-126346262f6e",
+  "type": "hospitalUser"
+},
+{
+  "username": "Soroka",
+  "password": "Soroka",
+  "token": "e1ac1777-6600-4608-a2c5-504c9b05c6d1",
+  "type": "hospitalUser"
+},
+{
+  "username": "Poriya",
+  "password": "Poriya",
+  "token": "38b8b157-0109-4c75-a63c-5203e9a0df75",
+  "type": "hospitalUser"
+},
+{
+  "username": "Sheba",
+  "password": "Sheba",
+  "token": "df112ee6-5a3d-46d5-86ed-6b80946c4e93",
+  "type": "hospitalUser"
+},
+{
+  "username": "Carmel",
+  "password": "Carmel",
+  "token": "25330e1a-bb98-4a00-8eef-fec8755e19b8",
+  "type": "hospitalUser"
+},
+{
+  "username": "Wolfson",
+  "password": "Wolfson",
+  "token": "c441a498-ce56-4d35-83a0-2cb712b5c832",
+  "type": "hospitalUser"
+},
+{
+  "username": "Abbott",
+  "password": "Vascular",
+  "token": "021577f2-7466-4bbc-9065-86fe3bd9c000",
+  "type": "administratorAccount"
+}
+]
