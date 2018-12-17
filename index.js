@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(allowAll);
 app.use(cookieParser())
 
-app.use(express.static('build'))
+// app.use(express.static('build'))
 
 
 
