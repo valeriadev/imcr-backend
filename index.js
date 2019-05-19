@@ -9,11 +9,23 @@ const cookieParser = require('cookie-parser')
 
 
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Credentials", "true");
+     // Website you wish to allow to connect
+     res.setHeader('Access-Control-Allow-Origin', 'http://imcr.info');
+
+     // Request methods you wish to allow
+     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+ 
+     // Request headers you wish to allow
+     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+ 
+     // Set to true if you need the website to include cookies in the requests sent
+     // to the API (e.g. in case you use sessions)
+     res.setHeader('Access-Control-Allow-Credentials', true);
+    // res.header("Access-Control-Allow-Credentials", "true");
     // res.header("P3P", 'CP=\"ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI\"');
     next();
 })
-app.use(cors({ credentials: true, allowedHeaders:['content-type','origin', "accept"], origin:['http://localhost:3000','http://imcr.info']}));
+// app.use(cors({ credentials: true, allowedHeaders:['content-type','origin', "accept"], origin:['http://localhost:3000','http://imcr.info']}));
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
 
