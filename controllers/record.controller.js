@@ -5,12 +5,16 @@ const config = require("../config");
 
 
 function record(req, res){
+    try{
     console.log(req.body)
     const filteredArray = filter.removeEmptyValues(Object.values(req.body));
     googleApiAppend.appendRecord(filteredArray, config.recordsSheetId);
 
     mail.sendMail(filteredArray, "Hospital");
     res.sendStatus(200);   
+    } catch(e) {
+        res.sendStatus(500);console.error(e);
+    }
 }
 
 function getRecord(req, res){
