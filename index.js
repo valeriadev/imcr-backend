@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-    console.log('in cros middleware');
+    console.log('in cros middlewar2e');
      // Website you wish to allow to connect
      res.setHeader('Access-Control-Allow-Origin', 'http://imcr.info');
 
