@@ -27,7 +27,6 @@ app.use((req, res, next) => {
     next();
 })
 // app.use(cors({ credentials: true, allowedHeaders:['content-type','origin', "accept"], origin:['http://localhost:3000','http://imcr.info']}));
-app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
