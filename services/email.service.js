@@ -9,13 +9,13 @@ var trasporter = nodemailer.createTransport({
 });
 
 
-function sendMail(values) {
+function sendMail(values, type) {
 
     const mailOptions = {
         from: 'imcr.notify@gmail.com',
         to: ['valeriamadaev@gmail.com', 'haberdan@gmail.com '],
-        subject: 'IMCR new record',
-        html: '<p> Imcr record</p>'
+        subject: 'IMCR new record - ' + type,
+        html: `<p> Imcr record ${type}</p>`
     };
 
     mailOptions.html += `<p>${values}</p>`;
