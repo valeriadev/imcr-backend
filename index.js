@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     // res.header("P3P", 'CP=\"ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI\"');
     next();
 })
-app.use(cors({ credentials: true, allowedHeaders:['Content-Type','Origin', "Accept"], origin:['http://localhost:3000','http://imcr.info']}));
+app.use(cors({ credentials: true, allowedHeaders:['content-type','origin', "accept"], origin:['http://localhost:3000','http://imcr.info']}));
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
 
