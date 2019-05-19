@@ -47,4 +47,14 @@ app.listen(8080, (err) => {
 });
 
 router.defineRoutes(app);
+
+
+app.use(function(err,req,res,next){
+    console.error(`error in error middlware ${err.message} ${err.stack}`)
+    res.status(500).json({
+        message:err.message,
+        stack: err.stack
+    });
+})
+
 // googleApi.listMajors();
