@@ -1,10 +1,7 @@
 const express = require("express");
 const app = express();
 const router = require("./routes/router");
-const cors = require("cors");
-const allowAll = require('./middleware/accessControl.middleware');
 const bodyParser = require("body-parser");
-const cookieParser = require('cookie-parser')
 
 
 
@@ -28,7 +25,6 @@ app.use((req, res, next) => {
 })
 // app.use(cors({ credentials: true, allowedHeaders:['content-type','origin', "accept"], origin:['http://localhost:3000','http://imcr.info']}));
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(bodyParser.json());
 // app.use(allowAll);
 
