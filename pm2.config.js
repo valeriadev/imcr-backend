@@ -1,7 +1,7 @@
-{
+module.exports = {
     apps: [{
         name: "IMCR-backend",
-        script: ".",
+        script: "index.js",
         env: {
             "NODE_ENV": "production",
         }
