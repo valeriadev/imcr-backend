@@ -40,7 +40,6 @@ app.listen(8080, (err) => {
 
 router.defineRoutes(app);
 
-app.use(express.static('public'))
 
 
 
