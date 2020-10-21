@@ -55,7 +55,7 @@ function getLastRecordByHospitalAndProdNumber(hospital, prodNum) {
     const sheets = google.sheets({ version: "v4", auth: oAuth2Client });
     sheets.spreadsheets.values.get(
       {
-        spreadsheetId: config.recordsSheetId,
+        spreadsheetId: config.sheetId,
 
         range: "raw!A:ZZ"
       },

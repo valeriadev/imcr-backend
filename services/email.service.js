@@ -1,10 +1,11 @@
 var nodemailer = require('nodemailer');
+const gmail = require('/Users/valeriamadaev/WebstormProjects/imcr-backend/config/index.js');
 
 var trasporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'imcr.notify@gmail.com',
-        pass: 'Aa123456imcr'
+        user: gmail.user,
+        pass: gmail.pass
     }
 });
 
@@ -12,8 +13,8 @@ var trasporter = nodemailer.createTransport({
 function sendMail(values, type) {
 
     const mailOptions = {
-        from: 'imcr.notify@gmail.com',
-        to: ['valeriamadaev@gmail.com', 'haberdan@gmail.com '],
+        from: gmail.from,
+        to: gmail.to,
         subject: 'IMCR new record - ' + type,
         html: `<p> Imcr record ${type}</p>`
     };

@@ -9,7 +9,7 @@ function record(req, res){
     try{
     console.log(req.body)
     const filteredArray = filter.removeEmptyValues(Object.values(req.body));
-    googleApiAppend.appendRecord(filteredArray, config.recordsSheetId);
+    googleApiAppend.appendRecord(filteredArray, config.sheetId);
 
     mail.sendMail(filteredArray, "Hospital");
     res.sendStatus(200);   
