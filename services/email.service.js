@@ -22,8 +22,10 @@ function sendMail(values, type) {
     mailOptions.html += `<p>${values}</p>`;
     
     trasporter.sendMail(mailOptions, function (err, info) {
-        if (err)
+        if (err){
+            console.log(err.message);
             console.error(err)
+        }
         else
             console.log(info);
     });
