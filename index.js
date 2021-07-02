@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const router = require("./routes/router");
 const bodyParser = require("body-parser");
+require('./services/email.service').sendMail("Laffee is D Dog2", "Laffee is D Dog2")
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
