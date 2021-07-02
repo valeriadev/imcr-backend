@@ -11,11 +11,7 @@ fs.readFile("./config/credentials.json", (err, content) => {
 });
 
 
-setTimeout(async ()=>{
-  console.log('start');
-  const a = await getLastRecordByHospitalAndProdNumber('1','1')
-  console.log('end',a);
-},3000)
+
 
 function authorize(credentials) {
   const { client_secret, client_id, redirect_uris } = credentials.installed;
