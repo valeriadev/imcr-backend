@@ -23,7 +23,6 @@ function sendMail(values, type) {
     
     trasporter.sendMail(mailOptions, function (err, info) {
         if (err){
-            require("fs").writeFileSync("err.log",JSON.stringify(err));
             console.error(err)
         }
         else
